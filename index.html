@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ForgiveNet — Test</title>
+
+    <style>
+        body {
+            font-family: sans-serif;
+            max-width: 700px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        textarea,
+        input {
+            width: 100%;
+            box-sizing: border-box;
+            margin-top: 8px;
+            margin-bottom: 20px;
+            padding: 10px;
+        }
+
+        textarea {
+            height: 250px;
+        }
+
+        button {
+            padding: 12px 24px;
+            cursor: pointer;
+        }
+
+        #status {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Request forgiveness</h1>
+
+    <p>
+        Connect MetaMask to Sepolia and submit your forgiveness request.
+    </p>
+
+    <p>
+        <button id="connect">Connect MetaMask</button>
+    </p>
+
+    <p id="account"></p>
+
+    <form id="request-form">
+
+        <label for="requestText">
+            Forgiveness request
+        </label>
+
+        <textarea
+            id="requestText"
+            placeholder="Enter your forgiveness request..."
+            required
+        ></textarea>
+
+        <label for="donation">
+            Donation (ETH)
+        </label>
+
+        <input
+            id="donation"
+            type="number"
+            step="any"
+            min="0"
+            placeholder="Minimum 0.000001 ETH"
+            required
+        >
+
+        <button type="submit">
+            Send Request
+        </button>
+
+    </form>
+
+    <div id="status"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/web3@4.0.3/dist/web3.min.js"></script>
+    <script src="app.js"></script>
+
+</body>
+</html>
