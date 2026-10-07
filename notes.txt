@@ -5,15 +5,7 @@ Sepolia faucet: https://sepolia-faucet.pk910.de/
 
 FORGIVENET TODO
 
-Frontend
-☐ Improve font
-☐ Add navigation menu:
-    Home
-    Ledger
-    Whitepaper
-    Quick Start
 ☐ Create Ledger page
-☐ Create Whitepaper page
 ☐ Create Quick Start page
 ☐ Clean up favicon
 

@@ -56,6 +56,12 @@ body {
     box-shadow: 0 3px 9px rgba(80, 70, 90, 0.12);
 }
 
+.main-nav a.active {
+    background: #fff1a8;
+    border-color: #efd96b;
+    color: #3f4b52;
+}
+
 h1 {
 
     color: #76558F;
@@ -162,4 +168,23 @@ button:hover {
 
     color: #66856E;
 
+}
+
+#ledger {
+    margin-top: 30px;
+}
+
+.ledger-entry {
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 8px rgba(80, 70, 90, 0.08);
+    font-size: 1.05rem;
+}
+
+.ledger-status {
+    text-align: center;
+    opacity: 0.65;
+    font-style: italic;
 }
