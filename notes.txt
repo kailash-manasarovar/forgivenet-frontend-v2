@@ -1,0 +1,3 @@
+Run locally: python -m http.server 8000
+Test account Sepolia: 0xe01b5A5dE062007Ef50D2C487506d450A2b3CB89 
+Sepolia faucet: https://sepolia-faucet.pk910.de/

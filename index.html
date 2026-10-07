@@ -3,38 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ForgiveNet — Test</title>
+    <link rel="icon" type="image/png" href="favicon.ico">
+    <title>forgivenet</title>
 
-    <style>
-        body {
-            font-family: sans-serif;
-            max-width: 700px;
-            margin: 40px auto;
-            padding: 20px;
-        }
+    <link rel="stylesheet" href="styles.css">
 
-        textarea,
-        input {
-            width: 100%;
-            box-sizing: border-box;
-            margin-top: 8px;
-            margin-bottom: 20px;
-            padding: 10px;
-        }
-
-        textarea {
-            height: 250px;
-        }
-
-        button {
-            padding: 12px 24px;
-            cursor: pointer;
-        }
-
-        #status {
-            margin-top: 20px;
-        }
-    </style>
 </head>
 
 <body>
@@ -42,14 +15,24 @@
     <h1>Request forgiveness</h1>
 
     <p>
-        Connect MetaMask to Sepolia and submit your forgiveness request.
+        Connect your wallet to Sepolia and submit your forgiveness request.
     </p>
 
-    <p>
-        <button id="connect">Connect MetaMask</button>
-    </p>
+    <div id="wallet">
 
-    <p id="account"></p>
+        <button id="connect">
+            Connect Wallet
+        </button>
+
+        <p id="account">
+            Wallet: Not connected
+        </p>
+
+        <p id="network">
+            Network: —
+        </p>
+
+    </div>
 
     <form id="request-form">
 

@@ -17,12 +17,15 @@ const CONTRACT_ABI = [
     }
 ];
 
+const SEPOLIA_CHAIN_ID = "0xaa36a7";
+
 let web3;
 let contract;
 let account;
 
 const connectButton = document.getElementById("connect");
 const accountDisplay = document.getElementById("account");
+const networkDisplay = document.getElementById("network");
 const form = document.getElementById("request-form");
 const status = document.getElementById("status");
 
@@ -34,7 +37,7 @@ async function connectWallet() {
 
     if (!window.ethereum) {
         status.textContent =
-            "MetaMask was not found. Please install MetaMask.";
+            "No compatible wallet was found.";
         return;
     }
 
@@ -54,17 +57,53 @@ async function connectWallet() {
         );
 
         accountDisplay.textContent =
-            "Connected: " + account;
+            "Wallet: " + account;
+
+        await updateNetwork();
 
         status.textContent =
-            "Connected to MetaMask.";
+            "Wallet connected.";
 
     } catch (error) {
 
         console.error(error);
 
         status.textContent =
-            "Could not connect to MetaMask.";
+            "Could not connect to wallet.";
+    }
+}
+
+
+async function updateNetwork() {
+
+    try {
+
+        const chainId =
+            await window.ethereum.request({
+                method: "eth_chainId"
+            });
+
+        console.log("Chain ID:", chainId);
+
+        if (chainId.toLowerCase() === SEPOLIA_CHAIN_ID) {
+
+            networkDisplay.textContent =
+                "Network: Sepolia";
+
+        } else {
+
+            networkDisplay.textContent =
+                "Network: Not Sepolia (" + chainId + ")";
+
+        }
+
+    } catch (error) {
+
+        console.error(error);
+
+        networkDisplay.textContent =
+            "Network: Unable to determine";
+
     }
 }
 
@@ -80,27 +119,33 @@ async function submitRequest(event) {
         document.getElementById("donation").value;
 
     if (!request.trim()) {
+
         status.textContent =
             "Please enter a request.";
+
         return;
     }
 
     if (!donation || Number(donation) <= 0) {
+
         status.textContent =
             "Please enter a donation amount.";
+
         return;
     }
 
     if (!account) {
+
         status.textContent =
-            "Please connect MetaMask first.";
+            "Please connect your wallet first.";
+
         return;
     }
 
     try {
 
         status.textContent =
-            "Opening MetaMask...";
+            "Opening wallet...";
 
         const value =
             web3.utils.toWei(donation, "ether");
