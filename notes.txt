@@ -5,7 +5,6 @@ Sepolia faucet: https://sepolia-faucet.pk910.de/
 
 FORGIVENET TODO
 
-☐ Create Ledger page
 ☐ Create Quick Start page
 ☐ Clean up favicon
 
