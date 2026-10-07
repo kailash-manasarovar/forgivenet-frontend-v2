@@ -1,3 +1,33 @@
 Run locally: python -m http.server 8000
 Test account Sepolia: 0xe01b5A5dE062007Ef50D2C487506d450A2b3CB89 
 Sepolia faucet: https://sepolia-faucet.pk910.de/
+
+
+FORGIVENET TODO
+
+Frontend
+☐ Improve font
+☐ Add navigation menu:
+    Home
+    Ledger
+    Whitepaper
+    Quick Start
+☐ Create Ledger page
+☐ Create Whitepaper page
+☐ Create Quick Start page
+☐ Clean up favicon
+
+Forgiveness Ledger
+☐ Decode forgiveness requests from transaction input data
+☐ Retrieve ForgiveNet transactions from Sepolia
+☐ Display forgiveness requests
+☐ Display donation amount
+☐ Display transaction date
+☐ Link each request to Etherscan
+☐ Add total number of requests
+☐ Add total ETH donated
+
+Later
+☐ Consider wallet-agnostic support
+☐ Move from Sepolia to mainnet when ready
+☐ Further polish the frontend
