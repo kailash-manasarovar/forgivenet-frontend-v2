@@ -29,26 +29,31 @@ body {
 
 .main-nav {
     display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 35px;
-    flex-wrap: wrap;
+    width: 100%;
+    margin-bottom: 40px;
+    gap: 8px;
 }
 
 .main-nav a {
+    flex: 1;
+    text-align: center;
     text-decoration: none;
-    color: #4b5563;
-    background: rgba(255, 255, 255, 0.7);
-    padding: 9px 16px;
-    border-radius: 20px;
+    color: #4f5b62;
+    background: #fff9d6;
+    padding: 10px 8px;
+    border-radius: 8px;
     font-family: "Lora", Georgia, serif;
     font-size: 0.95rem;
+    font-weight: 500;
+    border: 1px solid #f5e9a8;
+    box-shadow: 0 2px 6px rgba(80, 70, 90, 0.08);
     transition: all 0.2s ease;
 }
 
 .main-nav a:hover {
-    background: #fff;
+    background: #fff5b8;
     transform: translateY(-1px);
+    box-shadow: 0 3px 9px rgba(80, 70, 90, 0.12);
 }
 
 h1 {
