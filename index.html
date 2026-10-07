@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +12,13 @@
 </head>
 
 <body>
+
+    <nav class="main-nav">
+        <a href="/">Home</a>
+        <a href="/ledger/">Ledger</a>
+        <a href="/whitepaper/">Whitepaper</a>
+        <a href="/quick-start/">Quick Start</a>
+    </nav>
 
     <h1>Request forgiveness</h1>
 
@@ -40,24 +48,13 @@
             Forgiveness request
         </label>
 
-        <textarea
-            id="requestText"
-            placeholder="Enter your forgiveness request..."
-            required
-        ></textarea>
+        <textarea id="requestText" placeholder="Enter your forgiveness request..." required></textarea>
 
         <label for="donation">
             Donation (ETH)
         </label>
 
-        <input
-            id="donation"
-            type="number"
-            step="any"
-            min="0"
-            placeholder="Minimum 0.000001 ETH"
-            required
-        >
+        <input id="donation" type="number" step="any" min="0" placeholder="Minimum 0.000001 ETH" required>
 
         <button type="submit">
             Send Request
@@ -71,4 +68,5 @@
     <script src="app.js"></script>
 
 </body>
+
 </html>

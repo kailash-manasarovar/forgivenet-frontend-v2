@@ -1,72 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap');
+
+
 body {
-    font-family: Georgia, "Times New Roman", serif;
+
+    font-family: "Lora", Georgia, serif;
+
     max-width: 700px;
+
     margin: 50px auto;
+
     padding: 20px;
+
     line-height: 1.5;
-    background: #f4f1ea;
-    color: #263238;
+
+    background: linear-gradient(
+        135deg,
+        #F4DDF0,
+        #E4DDF3,
+        #D9E8F5,
+        #D5F0EA,
+        #E1F0C9,
+        #F4E8C5
+    );
+
+    color: #4A4160;
+
+}
+
+.main-nav {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 35px;
+    flex-wrap: wrap;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #4b5563;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 9px 16px;
+    border-radius: 20px;
+    font-family: "Lora", Georgia, serif;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+}
+
+.main-nav a:hover {
+    background: #fff;
+    transform: translateY(-1px);
 }
 
 h1 {
-    color: #344e68;
+
+    color: #76558F;
+
     margin-bottom: 10px;
+
 }
 
 #wallet {
+
     margin: 30px 0;
+
     padding: 20px;
-    border: 1px solid #c9b889;
+
+    border: 1px solid #C7B6D9;
+
     border-radius: 10px;
-    background: #fffdf7;
+
+    background: rgba(255, 250, 255, 0.75);
+
 }
 
 #account,
+
 #network {
+
     margin: 8px 0 0;
+
     word-break: break-all;
+
 }
 
 textarea,
+
 input {
+
     width: 100%;
+
     box-sizing: border-box;
+
     margin-top: 8px;
+
     margin-bottom: 20px;
+
     padding: 12px;
-    border: 1px solid #b8c4cc;
+
+    border: 1px solid #B8D5D5;
+
     border-radius: 6px;
-    background: #ffffff;
-    color: #263238;
+
+    background: rgba(255, 255, 255, 0.85);
+
+    color: #4A4160;
+
     font: inherit;
+
 }
 
 textarea {
+
     height: 250px;
+
     resize: vertical;
+
 }
 
 textarea:focus,
+
 input:focus {
-    outline: 2px solid #c9b889;
-    border-color: #344e68;
+
+    outline: 2px solid #9BCBC4;
+
+    border-color: #A991C2;
+
 }
 
 button {
+
     padding: 12px 24px;
+
     border: none;
+
     border-radius: 6px;
-    background: #344e68;
-    color: #ffffff;
+
+    background: #A987B9;
+
+    color: #FFFFFF;
+
     cursor: pointer;
+
     font: inherit;
+
 }
 
 button:hover {
-    background: #263a50;
+
+    background: #7FC3C0;
+
 }
 
 #status {
+
     margin-top: 20px;
-    color: #4f5d4f;
+
+    color: #66856E;
+
 }
