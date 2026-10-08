@@ -219,6 +219,10 @@ button:hover {
     margin-bottom: 0;
 }
 
+.ledger-request {
+    white-space: pre-wrap;
+}
+
 footer {
     margin-top: 80px;
     padding: 20px 0 10px;

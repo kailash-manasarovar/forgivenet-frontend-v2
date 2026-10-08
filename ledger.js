@@ -63,7 +63,8 @@ function createEntry(
     request,
     user,
     date,
-    isExample = false
+    isExample = false,
+    transactionHash = null
 ) {
 
     const entry =
@@ -93,8 +94,55 @@ function createEntry(
         "From user: " +
         user +
         "  |  " +
-        date +
-        (isExample ? "  |  Example" : "");
+        date;
+
+
+    /*
+     * Add Etherscan transaction link
+     * to genuine blockchain requests.
+     */
+    if (
+        !isExample &&
+        transactionHash
+    ) {
+
+        details.appendChild(
+            document.createTextNode("  |  ")
+        );
+
+
+        const link =
+            document.createElement("a");
+
+        link.href =
+            "https://sepolia.etherscan.io/tx/" +
+            transactionHash;
+
+        link.target =
+            "_blank";
+
+        link.rel =
+            "noopener";
+
+        link.textContent =
+            "View transaction";
+
+
+        details.appendChild(link);
+    }
+
+
+    /*
+     * Mark example requests.
+     */
+    if (isExample) {
+
+        details.appendChild(
+            document.createTextNode(
+                "  |  Example"
+            )
+        );
+    }
 
 
     entry.appendChild(text);
@@ -137,11 +185,13 @@ async function loadExamples(ledger) {
                 await fetch(example.file);
 
             if (!response.ok) {
+
                 throw new Error(
                     "Could not load " +
                     example.file
                 );
             }
+
 
             const request =
                 await response.text();
@@ -313,7 +363,9 @@ async function loadLedger() {
                 createEntry(
                     request,
                     log.topics[1],
-                    formattedDate
+                    formattedDate,
+                    false,
+                    log.transactionHash
                 )
             );
         }
@@ -336,7 +388,6 @@ async function loadLedger() {
             '<p class="ledger-status">' +
             'Unable to load the forgiveness ledger.' +
             '</p>';
-
     }
 }
 

@@ -5,12 +5,6 @@ Sepolia faucet: https://sepolia-faucet.pk910.de/
 
 FORGIVENET TODO
 
-<div id="footer"></div> -> add footer to every page
-
-Forgiveness Ledger
-☐ Display 10 forgiveness requests
-☐ Link each request to Etherscan
-
 ☐ Create Quick Start page
 ☐ Clean up favicon
 
