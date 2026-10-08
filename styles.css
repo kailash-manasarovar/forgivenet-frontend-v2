@@ -174,7 +174,7 @@ button:hover {
     margin-top: 30px;
 }
 
-.ledger-entry {
+.record-entry {
     background: rgba(255, 255, 255, 0.7);
     border-radius: 12px;
     padding: 20px 24px;
@@ -186,13 +186,13 @@ button:hover {
     opacity: 0.8;
 }
 
-.ledger-status {
+.record-status {
     text-align: center;
     opacity: 0.65;
     font-style: italic;
 }
 
-.ledger-user {
+.record-user {
     margin-top: 12px;
     padding-top: 12px;
     border-top: 1px solid rgba(80, 70, 90, 0.1);
@@ -201,7 +201,7 @@ button:hover {
     word-break: break-all;
 }
 
-.ledger-intro {
+.record-intro {
     max-width: 650px;
     margin: 0 auto 40px auto;
     padding: 20px 24px;
@@ -211,15 +211,15 @@ button:hover {
     font-size: 0.95rem;
 }
 
-.ledger-intro p {
+.record-intro p {
     margin: 0 0 14px 0;
 }
 
-.ledger-intro p:last-child {
+.record-intro p:last-child {
     margin-bottom: 0;
 }
 
-.ledger-request {
+.record-request {
     white-space: pre-wrap;
 }
 

@@ -57,7 +57,7 @@ function extractRequest(data) {
 
 
 /*
- * Create a ledger entry.
+ * Create a record.
  */
 function createEntry(
     request,
@@ -71,14 +71,14 @@ function createEntry(
         document.createElement("div");
 
     entry.className =
-        "ledger-entry";
+        "record-entry";
 
 
     const text =
         document.createElement("div");
 
     text.className =
-        "ledger-request";
+        "record-request";
 
     text.textContent =
         request;
@@ -88,7 +88,7 @@ function createEntry(
         document.createElement("div");
 
     details.className =
-        "ledger-user";
+        "record-user";
 
     details.textContent =
         "From user: " +
@@ -156,7 +156,7 @@ function createEntry(
  * Load the example forgiveness requests
  * from the examples folder.
  */
-async function loadExamples(ledger) {
+async function loadExamples(record) {
 
     const examples = [
         {
@@ -197,7 +197,7 @@ async function loadExamples(ledger) {
                 await response.text();
 
 
-            ledger.appendChild(
+            record.appendChild(
                 createEntry(
                     request.trim(),
                     example.user,
@@ -219,12 +219,12 @@ async function loadExamples(ledger) {
 
 
 /*
- * Load the real blockchain ledger.
+ * Load the real blockchain record.
  */
-async function loadLedger() {
+async function loadRecord() {
 
-    const ledger =
-        document.getElementById("ledger");
+    const record =
+        document.getElementById("record");
 
     try {
 
@@ -325,7 +325,7 @@ async function loadLedger() {
             );
 
 
-        ledger.innerHTML = "";
+        record.innerHTML = "";
 
 
         /*
@@ -359,7 +359,7 @@ async function loadLedger() {
                 );
 
 
-            ledger.appendChild(
+            record.appendChild(
                 createEntry(
                     request,
                     log.topics[1],
@@ -374,22 +374,22 @@ async function loadLedger() {
         /*
          * Add the three example requests.
          */
-        await loadExamples(ledger);
+        await loadExamples(record);
 
 
     } catch (error) {
 
         console.error(
-            "LEDGER ERROR:",
+            "RECORD ERROR:",
             error
         );
 
-        ledger.innerHTML =
-            '<p class="ledger-status">' +
-            'Unable to load the forgiveness ledger.' +
+        record.innerHTML =
+            '<p class="record-status">' +
+            'Unable to load the forgiveness record.' +
             '</p>';
     }
 }
 
 
-loadLedger();
+loadRecord();
