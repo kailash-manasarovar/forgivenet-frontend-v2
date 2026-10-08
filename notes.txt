@@ -5,14 +5,18 @@ Sepolia faucet: https://sepolia-faucet.pk910.de/
 
 FORGIVENET TODO
 
-☐ Create Quick Start page
-☐ Clean up favicon
+<div id="footer"></div> -> add footer to every page
 
 Forgiveness Ledger
 ☐ Display 10 forgiveness requests
 ☐ Link each request to Etherscan
 
-<div id="footer"></div> -> add footer to every page
+☐ Create Quick Start page
+☐ Clean up favicon
+
+☐ Create mainnet version, have it clean not a mess like before
+☐ Publish
+☐ Point 1frgvn.com at v2 and deprecate v1
 
 Later
 ☐ Consider wallet-agnostic support

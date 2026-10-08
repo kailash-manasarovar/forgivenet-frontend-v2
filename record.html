@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forgivenet | ledger</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="record.html" class="active">Record</a>
+        <a href="whitepaper.pdf" target="_blank" rel="noopener">Whitepaper</a>
+        <a href="quick-start.html">Quick Start</a>
+    </nav>
+
+    <h1>Record</h1>
+
+    <div class="ledger-intro">
+        <p>
+            See the most recent forgiveness requests submitted to the forgivenet network.
+        </p>
+
+        <p>
+            This is what a forgiveness request might look like.
+        </p>
+
+        <p>
+            The record is public and transparent. Each genuine request
+            is associated with the blockchain address from which it was
+            submitted and the date it was recorded.
+        </p>
+    </div>
+
+
+    <div id="ledger">
+        <p class="ledger-status">Loading forgiveness requests...</p>
+    </div>
+
+    <footer>
+        © 2026 Nandi Niramisa &amp; Co Limited
+        &nbsp; | &nbsp;
+        <a href="pp.pdf" target="_blank" rel="noopener">
+            Privacy Policy
+        </a>
+        &nbsp; | &nbsp;
+        <a href="terms.pdf" target="_blank" rel="noopener">
+            Terms
+        </a>
+        &nbsp; | &nbsp;
+        <a href="mailto:info@forgivenet.co.uk">
+            Contact us
+        </a>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/web3@4.0.3/dist/web3.min.js"></script>
+    <script src="ledger.js"></script>
+
+</body>
+
+
+</html>

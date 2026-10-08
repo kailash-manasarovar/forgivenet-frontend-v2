@@ -180,7 +180,10 @@ button:hover {
     padding: 20px 24px;
     margin-bottom: 16px;
     box-shadow: 0 2px 8px rgba(80, 70, 90, 0.08);
-    font-size: 1.05rem;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 0.82rem;
+    line-height: 1.45;
+    opacity: 0.8;
 }
 
 .ledger-status {
@@ -196,6 +199,24 @@ button:hover {
     font-size: 0.7rem;
     opacity: 0.45;
     word-break: break-all;
+}
+
+.ledger-intro {
+    max-width: 650px;
+    margin: 0 auto 40px auto;
+    padding: 20px 24px;
+    background: rgba(255, 255, 255, 0.55);
+    border-radius: 16px;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.ledger-intro p {
+    margin: 0 0 14px 0;
+}
+
+.ledger-intro p:last-child {
+    margin-bottom: 0;
 }
 
 footer {
