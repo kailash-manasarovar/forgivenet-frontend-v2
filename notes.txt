@@ -7,9 +7,8 @@ FORGIVENET TODO
 
 Wallets
 ☐ Test Coinbase/MetaMask again in Sepolia
-☐ Consider wallet-agnostic support
+☐ Deploy to Cloudflare so I can test new wallets on mobile
 ☐ Add Rabby and Trust
-
 
 Fun stuff 
 ☐ Test multi txs on Sepolia
@@ -18,5 +17,3 @@ Mainnet
 ☐ Create mainnet version, have it clean not a mess like before
 ☐ Publish
 ☐ Point 1frgvn.com at v2 and deprecate v1
-
-
