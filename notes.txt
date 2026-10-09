@@ -5,10 +5,11 @@ Sepolia faucet: https://sepolia-faucet.pk910.de/
 
 FORGIVENET TODO
 
+☐ Deploy to Cloudflare 
+
 Wallets
 ☐ Test Coinbase/MetaMask again in Sepolia
-☐ Deploy to Cloudflare so I can test new wallets on mobile
-☐ Add Rabby and Trust
+☐ Add Rabby and Trust and test them on mobile
 
 Fun stuff 
 ☐ Test multi txs on Sepolia
