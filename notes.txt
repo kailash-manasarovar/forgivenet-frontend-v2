@@ -5,14 +5,18 @@ Sepolia faucet: https://sepolia-faucet.pk910.de/
 
 FORGIVENET TODO
 
-☐ Create Quick Start page
-☐ Clean up favicon
+Wallets
+☐ Test Coinbase/MetaMask again in Sepolia
+☐ Consider wallet-agnostic support
+☐ Add Rabby and Trust
 
+
+Fun stuff 
+☐ Test multi txs on Sepolia
+
+Mainnet
 ☐ Create mainnet version, have it clean not a mess like before
 ☐ Publish
 ☐ Point 1frgvn.com at v2 and deprecate v1
 
-Later
-☐ Consider wallet-agnostic support
-☐ Move from Sepolia to mainnet when ready
-☐ Further polish the frontend
+
