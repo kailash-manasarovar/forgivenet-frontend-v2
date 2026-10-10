@@ -13,15 +13,13 @@ body {
 
     line-height: 1.5;
 
-    background: linear-gradient(
-        135deg,
-        #F4DDF0,
-        #E4DDF3,
-        #D9E8F5,
-        #D5F0EA,
-        #E1F0C9,
-        #F4E8C5
-    );
+    background: linear-gradient(135deg,
+            #F4DDF0,
+            #E4DDF3,
+            #D9E8F5,
+            #D5F0EA,
+            #E1F0C9,
+            #F4E8C5);
 
     color: #4A4160;
 
@@ -238,4 +236,71 @@ footer a {
 
 footer a:hover {
     text-decoration: underline;
+}
+
+#tx-modal {
+    width: min(90%, 420px);
+    box-sizing: border-box;
+    padding: 30px;
+    border: 1px solid #eadcf0;
+    border-radius: 24px;
+    background: linear-gradient(145deg, #fffafd, #fdf7ff 55%, #f5faff);
+    color: #263238;
+    font-family: inherit;
+    text-align: center;
+    box-shadow: 0 12px 40px #c9b5d52e;
+}
+
+#tx-modal::backdrop {
+    background: #26323870;
+    backdrop-filter: blur(4px);
+}
+
+#tx-modal h2 {
+    color: inherit;
+    margin-top: 0;
+}
+
+#tx-hash {
+    display: block;
+    overflow-wrap: anywhere;
+    margin: 15px 0;
+    padding: 12px;
+    border: 1px solid #eee2f2;
+    border-radius: 12px;
+    background: #ffffffb8;
+    color: inherit;
+    font-size: 0.85em;
+}
+
+#tx-link {
+    display: block;
+    margin: 18px 0 12px;
+    padding: 12px 18px;
+    border: 1px solid #eadcf0;
+    border-radius: 30px;
+    background: #f5eafa;
+    color: inherit;
+    text-decoration: none;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+#tx-link:hover {
+    background: #eadcf7;
+    transform: translateY(-1px);
+}
+
+#tx-close {
+    padding: 10px 24px;
+    border: 1px solid #e5dce9;
+    border-radius: 30px;
+    background: #ffffffb8;
+    color: inherit;
+    cursor: pointer;
+    font: inherit;
+    transition: background 0.2s ease;
+}
+
+#tx-close:hover {
+    background: #f5eafa;
 }

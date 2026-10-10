@@ -212,12 +212,20 @@ async function updateNetwork() {
     }
 }
 
+
 async function waitForTransactionReceipt(txHash) {
     while (true) {
-        const receipt = await web3.eth.getTransactionReceipt(txHash);
+        try {
+            const receipt = await web3.eth.getTransactionReceipt(txHash);
 
-        if (receipt) {
-            return receipt;
+            if (receipt) {
+                return receipt;
+            }
+        } catch (error) {
+            console.warn(
+                "Receipt lookup temporarily failed; retrying:",
+                error.message || error
+            );
         }
 
         await new Promise(resolve => setTimeout(resolve, 3000));
