@@ -5,7 +5,14 @@ Sepolia faucet: https://sepolia-faucet.pk910.de/
 
 FORGIVENET TODO
 
-☐ Deploy to Cloudflare 
+☐ Testing
+☐ Chrome — site working
+☐ Chrome — MetaMask
+☐ Chrome — Coinbase Wallet
+☐ Firefox — site working
+☐ Firefox — MetaMask
+☐ Firefox — Coinbase Wallet
+
 
 Wallets
 ☐ Test Coinbase/MetaMask again in Sepolia

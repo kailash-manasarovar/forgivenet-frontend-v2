@@ -6,9 +6,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="favicon.ico">
     <title>forgivenet</title>
-
     <link rel="stylesheet" href="styles.css">
 
+    <style>
+        #tx-modal {
+            width: min(90%, 420px);
+            box-sizing: border-box;
+            padding: 30px;
+            border: 1px solid #e3d8ef;
+            border-radius: 18px;
+            background: #fffafd;
+            color: #263238;
+            font-family: inherit;
+            text-align: center;
+            box-shadow: 0 12px 45px #00000025;
+        }
+
+        #tx-modal::backdrop {
+            background: #26323899;
+            backdrop-filter: blur(3px);
+        }
+
+        #tx-modal h2 {
+            color: #577d69;
+            margin-top: 0;
+        }
+
+        #tx-hash {
+            display: block;
+            overflow-wrap: anywhere;
+            margin: 15px 0;
+            padding: 12px;
+            border-radius: 10px;
+            background: #f3edf9;
+            font-size: 0.85em;
+        }
+
+        #tx-link {
+            display: block;
+            margin: 18px 0 12px;
+            padding: 12px 18px;
+            border-radius: 30px;
+            background: #e8def8;
+            color: #49366d;
+            text-decoration: none;
+        }
+
+        #tx-close {
+            padding: 10px 24px;
+            border: 1px solid #d8cce6;
+            border-radius: 30px;
+            background: #fff;
+            color: #49366d;
+            cursor: pointer;
+            font: inherit;
+        }
+    </style>
 </head>
 
 <body>
@@ -27,62 +80,71 @@
     </p>
 
     <div id="wallet">
+        <button id="connect">Connect Wallet</button>
 
-        <button id="connect">
-            Connect Wallet
-        </button>
-
-        <p id="account">
-            Wallet: Not connected
-        </p>
-
-        <p id="network">
-            Network: —
-        </p>
-
+        <p id="account">Wallet: Not connected</p>
+        <p id="network">Network: —</p>
     </div>
 
     <form id="request-form">
 
-        <label for="requestText">
-            Forgiveness request
-        </label>
+        <label for="requestText">Forgiveness request</label>
 
-        <textarea id="requestText" placeholder="Enter your forgiveness request..."></textarea>
+        <textarea
+            id="requestText"
+            placeholder="Enter your forgiveness request..."
+        ></textarea>
 
-        <label for="donation">
-            Donation (ETH)
-        </label>
+        <label for="donation">Donation (ETH)</label>
 
-        <input id="donation" type="number" step="any" min="0" placeholder="Minimum 0.000001 ETH" required>
+        <input
+            id="donation"
+            type="number"
+            step="any"
+            min="0"
+            placeholder="Minimum 0.000001 ETH"
+            required
+        >
 
-        <button type="submit">
-            Send Request
-        </button>
+        <button type="submit">Send Request</button>
 
     </form>
 
     <div id="status"></div>
 
+    <dialog id="tx-modal" aria-labelledby="tx-title">
+        <h2 id="tx-title">Transaction confirmed!</h2>
+
+        <p id="tx-message">
+            Your forgiveness request has been recorded on the blockchain.
+        </p>
+
+        <p>Transaction hash:</p>
+
+        <code id="tx-hash"></code>
+
+        <a
+            id="tx-link"
+            href="#"
+            target="_blank"
+            rel="noopener"
+        >View transaction on Sepolia Etherscan ↗</a>
+
+        <button id="tx-close" type="button">Close</button>
+    </dialog>
+
     <footer>
         © 2026 Nandi Niramisa &amp; Co Limited
         &nbsp; | &nbsp;
-        <a href="pp.pdf" target="_blank" rel="noopener">
-            Privacy Policy
-        </a>
+        <a href="pp.pdf" target="_blank" rel="noopener">Privacy Policy</a>
         &nbsp; | &nbsp;
-        <a href="terms.pdf" target="_blank" rel="noopener">
-            Terms
-        </a>
+        <a href="terms.pdf" target="_blank" rel="noopener">Terms</a>
         &nbsp; | &nbsp;
-        <a href="mailto:info@forgivenet.co.uk">
-            Contact us
-        </a>
+        <a href="mailto:info@forgivenet.co.uk">Contact us</a>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/web3@4.0.3/dist/web3.min.js"></script>
     <script src="app.js"></script>
 
 </body>
-
 </html>

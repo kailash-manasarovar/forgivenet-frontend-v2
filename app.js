@@ -35,6 +35,11 @@ const status = document.getElementById("status");
 const requestField = document.getElementById("requestText");
 const donationField = document.getElementById("donation");
 
+const txModal = document.getElementById("tx-modal");
+const txHashDisplay = document.getElementById("tx-hash");
+const txLink = document.getElementById("tx-link");
+const txClose = document.getElementById("tx-close");
+
 const walletMenu = document.createElement("div");
 walletMenu.id = "wallet-menu";
 walletMenu.style.display = "none";
@@ -56,6 +61,23 @@ window.dispatchEvent(new Event("eip6963:requestProvider"));
 
 connectButton.addEventListener("click", showWalletChoices);
 form.addEventListener("submit", submitRequest);
+
+function clearRequestForm() {
+    requestField.value = "";
+    donationField.value = "";
+    status.textContent = "Ready for your next request.";
+    requestField.focus();
+}
+
+txLink.addEventListener("click", () => {
+    clearRequestForm();
+    txModal.close();
+});
+
+txClose.addEventListener("click", () => {
+    txModal.close();
+    clearRequestForm();
+});
 
 async function showWalletChoices() {
     walletMenu.replaceChildren();
@@ -143,11 +165,11 @@ async function connectWallet(wallet) {
 
         await updateNetwork();
 
-        status.textContent =
-            selectedWalletName + " connected.";
+        status.textContent = selectedWalletName + " connected.";
 
         selectedProvider.on?.("accountsChanged", (accounts) => {
             account = accounts[0] || null;
+
             accountDisplay.textContent = account
                 ? "Wallet: " + account
                 : "Wallet: Not connected";
@@ -161,6 +183,7 @@ async function connectWallet(wallet) {
 
     } catch (error) {
         console.error(error);
+
         status.textContent =
             "Could not connect to " + wallet.name + ": " +
             (error.message || error);
@@ -183,8 +206,21 @@ async function updateNetwork() {
         }
     } catch (error) {
         console.error(error);
+
         networkDisplay.textContent =
             "Network: Unable to determine";
+    }
+}
+
+async function waitForTransactionReceipt(txHash) {
+    while (true) {
+        const receipt = await web3.eth.getTransactionReceipt(txHash);
+
+        if (receipt) {
+            return receipt;
+        }
+
+        await new Promise(resolve => setTimeout(resolve, 3000));
     }
 }
 
@@ -212,8 +248,11 @@ async function submitRequest(event) {
         return;
     }
 
-    if (donation === "" || !Number.isFinite(Number(donation)) ||
-        Number(donation) < 0.000001) {
+    if (
+        donation === "" ||
+        !Number.isFinite(Number(donation)) ||
+        Number(donation) < 0.000001
+    ) {
         window.alert("A little more ETH please.");
         donationField.focus();
         return;
@@ -236,7 +275,8 @@ async function submitRequest(event) {
         }
 
         status.textContent =
-            "Please confirm the transaction in " + selectedWalletName + "...";
+            "Please confirm the transaction in " +
+            selectedWalletName + "...";
 
         const value = web3.utils.toWei(donation, "ether");
 
@@ -256,12 +296,39 @@ async function submitRequest(event) {
             params: [transaction]
         });
 
-        status.innerHTML =
-            `Transaction sent! <a href="https://sepolia.etherscan.io/tx/${txHash}" target="_blank" rel="noopener">View on Sepolia Etherscan</a>`;
+        status.textContent =
+            "Transaction submitted. Waiting for blockchain confirmation...";
+
+        const receipt = await waitForTransactionReceipt(txHash);
+
+        if (
+            receipt.status === false ||
+            receipt.status === 0n ||
+            receipt.status === 0 ||
+            receipt.status === "0x0"
+        ) {
+            status.textContent =
+                "The transaction was mined but failed. Your request was not recorded successfully.";
+            return;
+        }
+
+        txHashDisplay.textContent = txHash;
+
+        txLink.href =
+            "https://sepolia.etherscan.io/tx/" + txHash;
+
+        status.textContent = "";
+
+        txModal.showModal();
 
     } catch (error) {
         console.error(error);
-        status.textContent =
-            "Error: " + (error.message || error);
+
+        if (error.code === 4001) {
+            status.textContent = "Transaction cancelled in your wallet.";
+        } else {
+            status.textContent =
+                "Error: " + (error.message || error);
+        }
     }
 }
