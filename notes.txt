@@ -5,17 +5,7 @@ Sepolia faucet: https://sepolia-faucet.pk910.de/
 
 FORGIVENET TODO
 
-☐ Testing
-☐ Chrome — site working
-☐ Chrome — MetaMask
-☐ Chrome — Coinbase Wallet
-☐ Firefox — site working
-☐ Firefox — MetaMask
-☐ Firefox — Coinbase Wallet
-
-
 Wallets
-☐ Test Coinbase/MetaMask again in Sepolia
 ☐ Add Rabby and Trust and test them on mobile
 
 Fun stuff 
