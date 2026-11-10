@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <url>
+       <loc>https://1frgvn.com/</loc>
+       <lastmod>2026-11-10T10:34:35+00:00</lastmod>
+       <priority>1.0000</priority>
+  </url>
+  <url>
+       <loc>https://1frgvn.com/mainnet/</loc>
+       <lastmod>2026-11-10T10:34:35+00:00</lastmod>
+       <priority>0.8000</priority>
+  </url>
+  <url>
+       <loc>https://1frgvn.com/sepolia/</loc>
+       <lastmod>2026-11-10T10:34:35+00:00</lastmod>
+       <priority>0.6400</priority>
+  </url>
+  <url>
+       <loc>https://1frgvn.com/documents/pp.pdf</loc>
+       <lastmod>2026-11-10T10:34:35+00:00</lastmod>
+       <priority>0.6400</priority>
+  </url>
+  <url>
+       <loc>https://1frgvn.com/documents/terms.pdf</loc>
+       <lastmod>2026-11-10T10:34:35+00:00</lastmod>
+       <priority>0.6400</priority>
+  </url>
+  <url>
+       <loc>https://1frgvn.com/mainnet/record</loc>
+       <lastmod>2026-11-10T10:34:35+00:00</lastmod>
+       <priority>0.5120</priority>
+  </url>
+  <url>
+       <loc>https://1frgvn.com/mainnet/whitepaper</loc>
+       <lastmod>2026-11-10T10:34:35+00:00</lastmod>
+       <priority>0.5120</priority>
+  </url>
+  <url>
+       <loc>https://1frgvn.com/mainnet/quick-start</loc>
+       <lastmod>2026-11-10T10:34:35+00:00</lastmod>
+       <priority>0.5120</priority>
+  </url>
+  <url>
+       <loc>https://1frgvn.com/sepolia/record</loc>
+       <lastmod>2026-11-10T10:34:35+00:00</lastmod>
+       <priority>0.4096</priority>
+  </url>
+  <url>
+       <loc>https://1frgvn.com/sepolia/whitepaper</loc>
+       <lastmod>2026-11-10T10:34:35+00:00</lastmod>
+       <priority>0.4096</priority>
+  </url>
+  <url>
+       <loc>https://1frgvn.com/sepolia/quick-start</loc>
+       <lastmod>2026-11-10T10:34:35+00:00</lastmod>
+       <priority>0.4096</priority>
+  </url>
+</urlset>
